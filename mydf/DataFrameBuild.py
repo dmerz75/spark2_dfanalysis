@@ -3,6 +3,16 @@ import pandas as pd
 import pyspark as spark
 
 
+# ---------------------------------------------------------
+# df_array(x):
+
+# ---------------------------------------------------------
+
+
+def df_array(x):
+    return spark.range(n).toDF("number")
+
+
 def getDataFrame_simple_array(n,columns=1):
     '''
     Return a simple array based dataframe of n columns
