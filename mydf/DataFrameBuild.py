@@ -13,6 +13,8 @@ class myDF():
     """
     :param simple_array:
     :param randomly_increasing_array:
+    :param profile_size:
+    :param profile_partitions:
     """
     def __init__(self,spark):
         # super(myDF, self).__init__()
@@ -22,6 +24,15 @@ class myDF():
 
     # def print_df(self):
         # self.count = self.df.count()
+
+    def profile_size(self):
+        pass
+
+
+    def profile_partitions(self):
+        pass
+
+
 
     def simple_array(self,*args):
         '''
