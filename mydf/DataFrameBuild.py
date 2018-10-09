@@ -33,7 +33,6 @@ class myDF():
         pass
 
 
-
     def simple_array(self,*args):
         '''
         Create a simple, linear array.
@@ -60,7 +59,6 @@ class myDF():
             self.df = self.spark.createDataFrame(pdx)
 
         self.count = total
-
         return self.df
 
     def randomly_increasing_array(self,n):
@@ -75,7 +73,7 @@ class myDF():
         # print(domain)
 
         num_random = [np.random.randint(0,x+1) for x in domain]
-        print(num_random)
+        # print(num_random)
 
         # 2 tall columns
         data = np.vstack([domain,num_random]).transpose()
@@ -90,3 +88,9 @@ class myDF():
 
         self.df = dfx
         return self.df
+
+    def string_array(self,lst):
+        '''
+        :param lst: a list of strings
+        '''
+        
