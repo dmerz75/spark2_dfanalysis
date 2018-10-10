@@ -159,8 +159,8 @@ class myDF():
         '''
         # print("Getting a single array of type:",ctype," with %d rows." % n)
 
-        ctype = tup_ctype[0]
-        width = tup_ctype[1]
+        ctype = tup_ctype[1]
+        width = tup_ctype[2]
 
         if re.search('str',ctype):
             arr = self.get_string_array(width)
@@ -194,7 +194,7 @@ class myDF():
 
         for ctype in column_types:
 
-            field = self.get_StructField(ctype[0])
+            field = self.get_StructField(ctype[1])
             lst_arr = []
 
             for i in range(r):
