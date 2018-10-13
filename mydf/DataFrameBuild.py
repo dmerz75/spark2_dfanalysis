@@ -14,7 +14,7 @@ from pyspark.sql import functions as sf
 
 # ---------------------------------------------------------
 
-class myDF():
+class GetDF():
     """
     :param simple_array:
     :param randomly_increasing_array:
@@ -29,15 +29,6 @@ class myDF():
 
     # def print_df(self):
         # self.count = self.df.count()
-
-    def profile_size(self):
-        pass
-
-
-    def profile_partitions(self):
-        pass
-
-
 
     def df_simple_array(self,*args):
         '''
@@ -95,14 +86,6 @@ class myDF():
         self.df = dfx
         return self.df
 
-    def df_string_array(self,lst,label='value'):
-        '''
-        :param lst: a list of strings
-        '''
-        dfx = self.spark.createDataFrame(lst,StringType()).toDF(label)
-        self.df = dfx
-        return self.df
-
 
     def get_StructField(self,ctype):
 
@@ -116,6 +99,67 @@ class myDF():
             field = StructField(ctype,DoubleType(),True)
 
         return field
+
+
+    def df_string_array(self,lst,label='value'):
+        '''
+        :param lst: a list of strings
+        '''
+        dfx = self.spark.createDataFrame(lst,StringType()).toDF(label)
+        self.df = dfx
+        return self.df
+
+
+    # PRIMARY ARRAY builder.
+    def get_array(self,atype,**kwargs):
+        '''
+        :param atype: string,integer,double
+        :param num:
+        :param width:
+        :param nrange:
+        :param low:
+        :param high:
+        '''
+        num = 10
+        width = 8
+        nrange = (1,11)
+        low = nrange[0]
+        high = nrange[1]
+
+        # print('nrange' in kwargs)
+        # print(type(kwargs))
+
+        # Check kwargs
+        if 'num' in kwargs:
+            num = kwargs['num']
+        if 'width' in kwargs:
+            width = kwargs['width']
+        if 'nrange' in kwargs:
+            nrange = kwargs['nrange']
+            low = nrange[0]
+            high = nrange[1]
+        if 'low' in kwargs:
+            low = nrange[0]
+        if 'high' in kwargs:
+            high = nrange[1]
+
+        # print(nrange,type(nrange))
+        # print(nrange,type(nrange[0]))
+        # print(low,high,type(low),type(high))
+
+        if atype == 'string':
+            str_arr = [''.join(random.choices(string.ascii_lowercase,k=width))
+                       for x in range(num)]
+            return str_arr
+
+        if atype == 'integer':
+            arr = np.array([random.randint(low,high) for x in range(num)])
+            return arr
+
+        if atype == 'double':
+            arr = np.array([random.uniform(low,high) for x in range(num)])
+            return arr
+
 
     def get_string_array(self,w=8):
         '''
@@ -145,6 +189,8 @@ class myDF():
         # num = random.random() # 0.0 - 1.0
         num = random.uniform(nrange[0],nrange[1])
         return num
+
+
 
     def decision_array_type(self,tup_ctype):
         '''
@@ -218,3 +264,11 @@ class myDF():
         dfx = self.spark.createDataFrame(lst_total,lst_fields).toDF(column_types)
         self.df = dfx
         return dfx
+
+
+    def profile_size(self):
+        pass
+
+
+    def profile_partitions(self):
+        pass
