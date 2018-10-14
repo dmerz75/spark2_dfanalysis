@@ -87,18 +87,6 @@ class GetDF():
         return self.df
 
 
-    def get_StructField(self,ctype):
-
-        if re.search('str',ctype):
-            field = StructField(ctype,StringType(),True)
-
-        if re.search('int',ctype):
-            field = StructField(ctype,IntegerType(),True)
-
-        if re.search('double',ctype):
-            field = StructField(ctype,DoubleType(),True)
-
-        return field
 
 
     def df_string_array(self,lst,label='value'):
@@ -113,12 +101,12 @@ class GetDF():
     # PRIMARY ARRAY builder.
     def get_array(self,atype,**kwargs):
         '''
-        :param atype: string,integer,double
-        :param num:
-        :param width:
-        :param nrange:
-        :param low:
-        :param high:
+        :param atype: (req.) string,integer,double
+        :param num: number of elements
+        :param width: length of any one string
+        :param nrange: low to high boundaries
+        :param low: low end boundary
+        :param high: high end boundary
         '''
         num = 10
         width = 8
@@ -190,6 +178,38 @@ class GetDF():
         num = random.uniform(nrange[0],nrange[1])
         return num
 
+    def get_StructField(self,ctype):
+        '''
+        Pass in variable (string,integer,double)
+        If not 'str','int','double', get the type.
+        '''
+        stypes = ['str','int','int32',
+                  'double','float64']
+
+        # print(ctype)
+        if ctype not in stypes:
+            ctype = type(ctype).__name__
+            # print(ctype)
+            if ctype not in stypes:
+                raise Exception("Type was not 'str','int',or 'double'.")
+
+        if re.search('str',ctype):
+            field = StructField(ctype,StringType(),True)
+            return field,ctype
+
+        if re.search('int',ctype):
+            field = StructField(ctype,IntegerType(),True)
+            return field,ctype
+
+        if re.search('float',ctype):
+            field = StructField(ctype,FloatType(),True)
+            return field,ctype
+
+        if re.search('double',ctype):
+            field = StructField(ctype,DoubleType(),True)
+            return field,ctype
+
+        return field,ctype
 
 
     def decision_array_type(self,tup_ctype):
@@ -231,10 +251,6 @@ class GetDF():
         :param c:
         :param column_types:
         '''
-        # print("Building a multidimensional array.")
-        # print(r,c)
-        # print(column_types)
-
         lst_total = []
         lst_fields = []
 
@@ -253,8 +269,14 @@ class GetDF():
 
         # print(lst_fields)
         # print(lst_total)
+
+        # multiple equal size lists, zipped into 1 list of tuples
         lst_zipped = list(zip(*lst_total))
+
         # print(lst_zipped)
+        # print("zipped,columns")
+        # print(lst_zipped)
+        # print(column_types)
 
         pdx = pd.DataFrame(lst_zipped,columns=[c[0] for c in column_types])
         self.df = self.spark.createDataFrame(pdx)
@@ -266,9 +288,38 @@ class GetDF():
         return dfx
 
 
+    def df_from_arrays(self,lst_arr,lst_names=[]):
+        '''
+        :param lst_arr: list of arrays
+        '''
+        fields = [] # StructField
+        ctypes = [] # str,int,float,double
+        for arr in lst_arr:
+            field,ctype = self.get_StructField(arr[0])
+            # print(field,type(field))
+            fields.append(field)
+            ctypes.append(ctype)
+        # print(fields)
+
+        if len(lst_names) != len(lst_arr):
+            lst_names = ctypes
+
+        # multiple equal size lists, zipped into 1 list of tuples
+        lst_zipped = list(zip(*lst_arr))
+
+        pdx = pd.DataFrame(lst_zipped,columns=[name for name in lst_names])
+        self.df = self.spark.createDataFrame(pdx)
+        return self.df
+
+        # ?? can I skip pandas?
+        dfx = self.spark.createDataFrame(lst_zipped,fields)
+        self.df = dfx
+        return dfx
+
+
+
     def profile_size(self):
         pass
-
 
     def profile_partitions(self):
         pass
