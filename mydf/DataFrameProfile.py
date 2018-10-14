@@ -3,7 +3,7 @@ import numpy as np
 import pyspark
 
 
-class ProfileDF():
+class DataFrameProfile():
     """
     A class to profile a dataframe
     """

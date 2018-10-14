@@ -11,10 +11,9 @@ from pyspark.sql import functions as sf
 
 # ---------------------------------------------------------
 # df_array(x):
-
 # ---------------------------------------------------------
 
-class GetDF():
+class DataFrameBuild():
     """
     :param simple_array:
     :param randomly_increasing_array:
@@ -291,6 +290,7 @@ class GetDF():
     def df_from_arrays(self,lst_arr,lst_names=[]):
         '''
         :param lst_arr: list of arrays
+        :param lst_names: (optional) give column names.
         '''
         fields = [] # StructField
         ctypes = [] # str,int,float,double
@@ -315,11 +315,3 @@ class GetDF():
         dfx = self.spark.createDataFrame(lst_zipped,fields)
         self.df = dfx
         return dfx
-
-
-
-    def profile_size(self):
-        pass
-
-    def profile_partitions(self):
-        pass
