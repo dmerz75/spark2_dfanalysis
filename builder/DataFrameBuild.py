@@ -114,33 +114,93 @@ class DataFrameBuild():
         return field,ctype
 
 
-
-
-
-    def arrays_to_dataframe(self,lst_arr,lst_names=[]):
+    def arrays_to_dataframe(self,lst_arr,lst_names=None):
         '''
+        This function converts a list of arrays and a list of names (columns)
+        into a dataframe with column headers having the names in the list.
         :param lst_arr: list of arrays
         :param lst_names: (optional) give column names.
         '''
+        # print(type(lst_arr))
+        # print(type(lst_names))
+        #
+        # print(lst_names)
+        # print(len(lst_arr),len(lst_names))
+
+        if lst_names == None:
+            run_ctype = True
+        else:
+            run_ctype = False
+
+        # if it goes in as a list, -> becomes a list of lists.
+        # submitted: ['qvfdlpks', 'vpyviyux', 'ypqyinsl']
+        # result: [['qvfdlpks', 'vpyviyux', 'ypqyinsl']]
+
+        # lst_arr: array, string, list, list of lists, list of array/list
+        top_level = type(lst_arr).__name__
+        next_level = None
+
+        if top_level == 'list':
+
+            next_level = type(lst_arr[0]).__name__
+
+            if ((next_level != 'list') and (next_level != 'ndarray')):
+                lst_arr = [lst_arr]
+        else:
+            lst_arr = [lst_arr]
+
+        print("Levels:")
+        print(top_level,next_level)
+        print(lst_arr)
+
+        # if type(lst_arr).__name__ == 'list':
+        #
+        #     # if list, then check if it's
+        #     print(type(lst_arr[0]).__name__)
+        #     if ((type(lst_arr[0]).__name__ != 'list') and
+        #         (type(lst_arr[0]).__name__ != 'ndarray')):
+        #         # turn list submitted to list of list.
+        #         lst_arr = [lst_arr]
+
+        if (type(lst_names).__name__ != 'list'):
+            lst_names = [lst_names]
+
+        # print(type(lst_arr))
+        # print(type(lst_names))
+        # print(len(lst_arr),len(lst_names))
+        # return
 
         # collect ctypes
-        fields = [] # StructField
-        ctypes = [] # str,int,float,double
-        for arr in lst_arr:
-            field,ctype = self.get_StructField(arr[0])
-            # print(field,type(field))
-            fields.append(field)
-            ctypes.append(ctype)
-        # print(fields)
-
-        # rename lists
-        if len(lst_names) != len(lst_arr):
+        if run_ctype == True:
+            fields = [] # StructField
+            ctypes = [] # str,int,float,double
+            for arr in lst_arr:
+                field,ctype = self.get_StructField(arr[0])
+                # print(field,type(field))
+                fields.append(field)
+                ctypes.append(ctype)
+            # print(fields)
+            # print(ctypes)
+            # return
             lst_names = ctypes
 
-        # multiple equal size lists, zipped into 1 list of tuples
-        lst_zipped = list(zip(*lst_arr))
+        print("check:")
+        print(lst_arr,len(lst_arr))
+        print(lst_names)
+        # return
 
+        # multiple equal size lists, zipped into 1 list of tuples
+        if len(lst_arr) == 1:
+            lst_zipped = lst_arr[0]
+        else:
+            lst_zipped = list(zip(*lst_arr))
+
+        # print('zipped:',lst_zipped)
+
+        # Final DataFrame (Pandas)
         pdx = pd.DataFrame(lst_zipped,columns=lst_names)
+
+        # Final DataFrame (Spark)
         self.df = self.spark.createDataFrame(pdx)
         return self.df
 
