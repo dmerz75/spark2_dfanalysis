@@ -1,1 +1,11 @@
 theme: jekyll-theme-cayman
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - README.md
+  - pages/Building_DataFrames.md
+  - pages/Read_Write_Partition.md
+  - pages/Analysis.md
