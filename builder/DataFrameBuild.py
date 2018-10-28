@@ -149,9 +149,9 @@ class DataFrameBuild():
         else:
             lst_arr = [lst_arr]
 
-        print("Levels:")
-        print(top_level,next_level)
-        print(lst_arr)
+        # print("Levels:")
+        # print(top_level,next_level)
+        # print(lst_arr)
 
         # if type(lst_arr).__name__ == 'list':
         #
@@ -184,9 +184,9 @@ class DataFrameBuild():
             # return
             lst_names = ctypes
 
-        print("check:")
-        print(lst_arr,len(lst_arr))
-        print(lst_names)
+        # print("check:")
+        # print(lst_arr,len(lst_arr))
+        # print(lst_names)
         # return
 
         # multiple equal size lists, zipped into 1 list of tuples
