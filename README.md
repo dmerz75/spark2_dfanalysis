@@ -19,7 +19,7 @@ partitioning schemes and discuss certain parameter advantages and disadvantages.
 
 ## [Analysis](pages/Analysis.md)
 
-Let's get some comparisons, aggregations, and
+Let's get some comparisons and aggregations with grouping and ordering.
 
 
 ## [Transformations / Manipulations](pages/transformations.md)
