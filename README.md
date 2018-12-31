@@ -5,6 +5,9 @@ Dataframe analysis in PySpark!
 [(git-home)](https://github.com/dmerz75/spark2_dfanalysis) -->
 <!-- [Iridium](https://dmerz75.github.io/iridium_catalyst/) for details. -->
 
+## [Initial Configuration](pages/Initial_Configuration.md)
+
+Initial Spark settings.
 
 ## [Building / Initial Construction](pages/Building_DataFrames.md)
 
