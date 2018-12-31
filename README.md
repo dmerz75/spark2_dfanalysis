@@ -9,22 +9,24 @@ Dataframe analysis in PySpark!
 
 Initial Spark settings.
 
+<br>
 ## [Building / Initial Construction](pages/Building_DataFrames.md)
 
 Let's build some dataframes so that we have something with which to work.
 
-
+<br>
 ## [Read/Write/Partition](pages/Read_Write_Partition.md)
 
 Let's get some basic reading and writing examples down. I'll demonstrate some
 partitioning schemes and discuss certain parameter advantages and disadvantages.
 
-
+<br>
 ## [Analysis](pages/Analysis.md)
 
 Let's get some comparisons and aggregations with grouping and ordering.
 
 
+<br>
 ## [Transformations / Manipulations](pages/transformations.md)
 
 Let's do some common dataframe manipulations. I'll show what I expect are some
