@@ -1,6 +1,6 @@
 # myignores:
-example_notebooks/src
-example_notebooks/TODO.md
+notebooks/src
+notebooks/TODO.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
