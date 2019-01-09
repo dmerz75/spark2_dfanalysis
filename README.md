@@ -17,7 +17,7 @@ parameter advantages and disadvantages.
 
   - [Build/Construct](./pages/construct/Building_DataFrames1.html)
 
-  In case you don't have big data sets, build some quickly right here!
+  In case you don't have big data sets, build some quickly!
 
   - [Read/Write/Partition](./pages/construct/Standard_Configs.html)
 
@@ -29,10 +29,14 @@ parameter advantages and disadvantages.
   - Read/write for loop with some count/logical comparisons.
 
 
-## Common Transformations and Analysis
+## Common Transformations and Analysis:
 Let's do some common dataframe manipulations. I'll show what I expect are some
 common column formatting issues, occurrences, and operations you're likely to see.
 We'll cover aggregations, grouping, and ordering.
   - [Transformations](pages/common/Transformations.md)
+
   - [Analysis](pages/common/Analysis.md)
-  - Joins (coming soon!)
+
+(coming soon!)
+
+  - Joins

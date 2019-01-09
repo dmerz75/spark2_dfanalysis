@@ -1,6 +1,7 @@
 # myignores:
 notebooks/src
 notebooks/TODO.md
+notebooks/complete/*.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
