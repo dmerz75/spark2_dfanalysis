@@ -11,15 +11,15 @@ We'll do some basic reading, writing, partitioning and maybe discuss certain
 parameter advantages and disadvantages.
 
 ## The Basics:
-  - [Initial Configuration / Spark settings for your Jupyter notebook!](pages/build/Initial_Configuration.md)
+  - [Initial Configuration / Spark settings for your Jupyter notebook!](pages/construct/Initial_Configuration.md)
 
   Quickly begin your fresh notebook here!
 
-  - [Build/Construct](./pages/build/Building_DataFrames1.html)
+  - [Build/Construct](./pages/construct/Building_DataFrames1.html)
 
   In case you don't have big data sets, build some quickly right here!
 
-  - [Read/Write/Partition](./pages/build/Standard_Configs.html)
+  - [Read/Write/Partition](./pages/construct/Standard_Configs.html)
 
   Let's get some standard reading, writing and partitioning examples down.
 
