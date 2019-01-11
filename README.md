@@ -10,19 +10,24 @@ Let's build some dataframes so that we have something with which to work.
 We'll do some basic reading, writing, partitioning and maybe discuss certain
 parameter advantages and disadvantages.
 
-## The Basics:
-  - [Initial Configuration / Spark settings for your Jupyter notebook!](./pages/construct/Standard_Configs.html)
-  <!-- (pages/construct/Initial_Configuration.md) -->
+## [Configs:](./pages/configs/Configs.md)
 
   Quickly begin your fresh notebook here!
 
-  - [Build/Construct](./pages/construct/Building_DataFrames1.html)
+  Initial Configuration / Spark settings for your Jupyter notebook!]
+
+## [Basics:](./pages/basics/Basics.md)
+
+(read, write, generate a sample DF ..)
 
   In case you don't have big data sets, build some quickly!
 
-  - [Read/Write/Partition]
+
+  <!-- (./pages/basics/Building_DataFrames1.html) -->
 
   Let's get some standard reading, writing and partitioning examples down.
+
+  - [Read/Write/Partition]
 
 (coming soon!)
 
@@ -30,18 +35,25 @@ parameter advantages and disadvantages.
   - Read/write for loop with some count/logical comparisons.
 
 
-## Common Transformations and Analysis:
+## [Analysis:](pages/analysis/Analysis.md)
 Let's do some common dataframe manipulations. I'll show what I expect are some
 common column formatting issues, occurrences, and operations you're likely to see.
 We'll cover aggregations, grouping, and ordering.
-  - [Transformations](pages/common/Transformations.md)
 
-  - [Analysis](pages/common/Analysis.md)
+  <!-- - [Analysis] -->
+
+## [Transformations:](pages/transformations/Transformations.md)
+  <!-- - [Transformations] -->
 
 (coming soon!)
 
+## [Joins:](pages/joins/Joins.md)
+
   - Joins
 
+## Intermediate
+
+(coming soon!)
 
 ## In Progress:
   - [Basic Operations](notebooks\incomplete\dev_basic_ops_2dataframes.html)
