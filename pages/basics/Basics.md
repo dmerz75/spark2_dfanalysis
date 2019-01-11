@@ -10,6 +10,9 @@
 
 [Read/Write](Read_Write_Partition.md)
 
+[User Defined Functions for Date, Datetime](udf_date_time.md)
+  - Uses: join, udf, lambda, date, datetime, withColumn, drop
+
 (coming soon!)
 
   - Read in dataframe, do a basic comparison.
