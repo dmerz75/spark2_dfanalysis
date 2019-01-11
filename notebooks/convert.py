@@ -40,24 +40,38 @@ def parse_arguments():
     # parser.add_argument("-r","--range",help="range for running")
     parser.add_argument("-d","--subdir",help="subdirectory provided")
     parser.add_argument("-o","--outdir",help="output directory")
+    parser.add_argument("-f","--nfile",help="notebook file")
     args = vars(parser.parse_args())
     return args
 args = parse_arguments()
 
 my_dir = os.path.dirname(os.path.abspath('__file__'))
 
-dirname = args['subdir']
-fp_dirname = os.path.join(my_dir,dirname)
+
+
+# if 'subdir' in args:
+try:
+    dirname = args['subdir']
+    fp_dirname = os.path.join(my_dir,dirname)
+    lst_files = glob(os.path.join(fp_dirname,'*.ipynb'))
+except:
+    try:
+        lst_files = [os.path.join(my_dir,args['nfile'])]
+    except:
+        pass
+
+# if 'nfile' in args:
+# try:
 
 outdir = args['outdir']
 fp_outdir = os.path.join(my_dir,outdir)
 
-print("my_dir:",my_dir)
-print("in-dir:",fp_dirname)
-print("out-dir:",fp_outdir)
+# print("my_dir:",my_dir)
+# print("in-dir:",fp_dirname)
+# print("out-dir:",fp_outdir)
 # sys.exit()
 
-lst_files = glob(os.path.join(fp_dirname,'*.ipynb'))
+
 # print(lst_files)
 
 for nb_file in lst_files:
@@ -74,7 +88,9 @@ for nb_file in lst_files:
     with open(html_file) as fp:
         text = fp.read()
 
-        with open(dest_file,"w") as fpo:
-            fpo.write(text)
+    os.remove(html_file)
+
+    with open(dest_file,"w") as fpo:
+        fpo.write(text)
 
     # break
