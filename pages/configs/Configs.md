@@ -1,7 +1,9 @@
 [(home)](https://dmerz75.github.io/spark2_dfanalysis)
 
-# Standard Configurations / Initial Spark Session creation.
+# Beginning a Jupyter notebook for PySpark!
 
-- [Standard PySpark Configuration](Standard_Configs.html)
+    - [Initial Configuration](Initial_Configuration.md)
+        - Python libraries, pandas, numpy, and pyspark
 
-- [Initial Configuration for Jupyter notebook for PySpark](Initial_Configuration.md)
+    - [Initial Configuration + DataFrameBuild](Standard_Configs.html)
+        - My paths and libraries 
