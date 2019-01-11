@@ -22,12 +22,13 @@ We'll cover aggregations, grouping, and ordering.
 
 <!-- [Intermediate:](pages/intermediate) (coming soon!) -->
 
-In Progress / still under development:
-  - [Basic Operations](notebooks\incomplete\dev_basic_ops_2dataframes.html)
-  - [Build examples](notebooks\incomplete\examples_build_dataframe.html)
-  - [More Build Examples](notebooks\incomplete\dev_build_dataframe.html)
-  - [For Loop Write & Check](notebooks\incomplete\dev_ForLoopWriteCheck.html)
-  - [Read Write Partition](notebooks\incomplete\dev_read_write_partition.html)
+<br>
+# In Progress / still under development:
+ [Basic Operations](notebooks\incomplete\dev_basic_ops_2dataframes.html)
+ [Build examples](notebooks\incomplete\examples_build_dataframe.html)
+ [More Build Examples](notebooks\incomplete\dev_build_dataframe.html)
+ [For Loop Write & Check](notebooks\incomplete\dev_ForLoopWriteCheck.html)
+ [Read Write Partition](notebooks\incomplete\dev_read_write_partition.html)
 
 
 <!-- [(home)](https://dmerz75.github.io/spark2_dfanalysis)
