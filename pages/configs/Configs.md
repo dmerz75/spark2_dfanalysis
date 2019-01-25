@@ -1,4 +1,4 @@
-[(home)](https://dmerz75.github.io/spark2_dfanalysis)
+<!-- [(home)](https://dmerz75.github.io/spark2_dfanalysis) -->
 
 # Beginning a Jupyter notebook for PySpark!
 
