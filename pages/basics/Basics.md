@@ -8,11 +8,11 @@
 
 [Building DataFrames](Building_DataFrames1.md)
   - Use DataFrameBuild.build_array to get some sample string, integer, or double columns
-'''python
+```python
 mystr = DFB.build_array("string",num=12,width=8)
 myint = DFB.build_array("integer",num=12,nrange=(0,4))    # inclusive on range
 mydoub = DFB.build_array("double",num=12,nrange=(10,10.1))
-'''
+```
 
 [Example DataFrames](Example_Dataframes.md)
   - Some sample dataframes to copy.
