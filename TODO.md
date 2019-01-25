@@ -1,4 +1,10 @@
 # TODO
+# next:
+## printSchema example, column_comparison
+## git, pip, curl
+# later:
+## left join, right join, outer, inner
+## see preferred store for validation
 
 ## use select, distinct -> column -> get array
 
@@ -46,3 +52,8 @@ class ApplicationContext(object):
     @staticmethod
     def _create_spark_session(job_name):
         return SparkSession.builder.appName(job_name).getOrCreate()
+
+# CSS/HTML:
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
