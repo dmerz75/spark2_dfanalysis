@@ -3,6 +3,7 @@
 # Analysis:
 
 - [Basic groupBy, orderBy, agg, desribe, and filter commands.](./Analysis_basic_group_orderBy_aggregate_describe.md)
+
 ```python
 # price based columns
 
@@ -18,6 +19,7 @@ df.groupBy("division")\
 ```
 
 - [Multiple Category groupBy and describe by group](./Categorize.md)
+
 ```python
 df\
 .groupBy("price_range")\
