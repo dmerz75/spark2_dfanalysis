@@ -1,10 +1,10 @@
 # Let's explore Spark DataFrames
 
 Dataframe analysis in PySpark!
-
+<!--
 Let's build some dataframes so that we have something with which to work.
 We'll do some basic reading, writing, partitioning and maybe discuss certain
-parameter advantages and disadvantages.
+parameter advantages and disadvantages. -->
 
 [Configs:](./pages/configs/Configs.md) Initial Configuration / Spark settings for your Jupyter notebook!
 

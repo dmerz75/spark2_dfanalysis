@@ -7,7 +7,7 @@ import pandas as pd
 
 import pyspark as spark
 from pyspark.sql.types import *
-from pyspark.sql import functions as sf
+# from pyspark.sql import functions as sf
 
 # ---------------------------------------------------------
 # df_array(x):
