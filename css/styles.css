@@ -1,0 +1,43 @@
+<style>
+
+.c1 {
+    font-size: 1.5em;
+    font-family: "Consolas", "Lucida Console";
+    color: Lime;
+    /* LawnGreen; */
+    padding: 0.5em;
+    background: Black;
+    border-width: 0.25em;
+    border-style: solid;
+    border-color: DodgerBlue;
+    border-radius: 0.4em;
+    text-align: center;
+}
+
+.c2 {
+    font-size: 100%
+    color: #08FF00;
+    background: #151515;
+    /* background: #330033; */
+    border: thin solid #333;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: none;
+}
+
+.c3 {
+    font: 3em Verdana, Geneva, sans-serif;
+    text-transform: none;
+    color: #08FF00;
+    background: #FFF;
+    border: thin solid #333;
+}
+
+
+.jek2 {
+    /* your styles for the class version-two */
+    font-size: 3em;
+    color: blue;
+}
+
+</style>
