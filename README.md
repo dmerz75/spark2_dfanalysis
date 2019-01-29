@@ -18,11 +18,11 @@ We'll cover aggregations, grouping, and ordering.
 
 [Transformations:](pages/transformations/Transformations.md) (coming soon!)
 
-[Joins:](pages/joins/Joins.md) (coming soon!)
+[Joins:](pages/joins/Joins.md) Join!
 
 <!-- [Intermediate:](pages/intermediate) (coming soon!) -->
 
-<br>
+<!-- <br>
 ## In Progress / still under development:
  [Basic Operations](notebooks\incomplete\dev_basic_ops_2dataframes.html)
 
@@ -33,7 +33,7 @@ We'll cover aggregations, grouping, and ordering.
  [For Loop Write & Check](notebooks\incomplete\dev_ForLoopWriteCheck.html)
 
  [Read Write Partition](notebooks\incomplete\dev_read_write_partition.html)
-
+ -->
 
 <!-- [(home)](https://dmerz75.github.io/spark2_dfanalysis)
 [(git-home)](https://github.com/dmerz75/spark2_dfanalysis) -->
