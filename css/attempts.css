@@ -1,0 +1,66 @@
+fieldset legend {
+    font: 1em Verdana, Geneva, sans-serif;
+    text-transform: none;
+    color: #00F;
+    background: #CCF;
+    border: thin solid #333;
+}
+
+
+label {
+    font-size: 50px;
+    color: #08FF00;
+    font-style: oblique;
+    font-variant: small-caps;
+}
+
+label {
+    color: #B4886B;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    float: left;
+}
+
+body {
+    font-size: 25px;
+}
+
+p {
+    font: 15px arial, sans-serif;
+    margin-left: 20px;
+    /* margin: 10px 0; */
+}
+
+code {
+    color: #08FF00;
+}
+
+p.a {
+    font: 15px arial, sans-serif;
+    margin-left: 20px;
+}
+
+p.b {
+    font: italic bold 12px/30px Georgia, serif;
+}
+
+#p1 {
+    font-weight: bold;
+}
+
+#p2 {
+    font-style: italic;
+}
+
+#p3 {
+    font-variant: small-caps;
+}
+
+#p4 {
+    text-transform: uppercase;
+}
+
+#p5 {
+    line-height: 2;
+}

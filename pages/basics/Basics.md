@@ -19,8 +19,28 @@ mydoub = DFB.build_array("double",num=12,nrange=(10,10.1))
 
 [Read/Write](Read_Write_Partition.md)
 
-[User Defined Functions for Date, Datetime](udf_date_time.md)
-  - Uses: join, udf, lambda, date, datetime, withColumn, drop
+[User Defined Functions for Date, Datetime](udf_date_time.md) join, udf, lambda, date, datetime, withColumn, drop, concat, unique identifier
+```python
+# UDF's with lambdas!
+
+# functions:
+def nohyphens(z):
+    return re.sub("-","",str(z))
+
+# udf's:
+udf_nohyphen_str = udf(lambda z: nohyphens(z),StringType())
+udf_nohyphen_int = udf(lambda z: int(nohyphens(z)),IntegerType())
+
+# remove the hyphens!
+df_nohyphen = df_dated2\
+.withColumn("int-date",udf_nohyphen_int(col("date-hyphen")))\
+```
+
+```python
+unique_id = [col('make'),lit('_'),col('vin'), lit('_'), col('year')]
+
+df_id = df_sales.withColumn('key',concat(*unique_id))
+```
 
 (coming soon!)
 
