@@ -3,6 +3,10 @@ notebooks/src
 notebooks/TODO.md
 notebooks/complete/*.html
 
+# intellij
+.idea
+*.iml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
